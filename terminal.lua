@@ -1,3 +1,4 @@
+#!/usr/bin/lua
 package.loaded.terminal = _ENV
 
 local cd = require"cal_diff"
@@ -22,15 +23,9 @@ end--func
 
 
 local function TerminalInterface()
-    io_wrt("**************Code Diffrence**************\n", "Version 1.0\n", "Author: qswang, blog.csdn.net/wangqs1988\n")
-    io_wrt("******************************************\n\n")
-    while true do
-        io_wrt("first file name:\n")
-        local file_name_a = io_rd("*line")
-        io_wrt("second file name:\n")
-        local file_name_b = io_rd("*line")
+        local file_name_a = arg[1]
+        local file_name_b = arg[2]
         ShowDifferenceOfTwoFiles(file_name_a, file_name_b)
-    end--while
 end--func
 
 
